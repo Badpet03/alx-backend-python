@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-""" Complex types - functions """
+
+
+'''A module that returns a function'''
+
 
 from typing import Callable
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    """ Return function that multiplies float by multiplier """
-    def multiply(num: float) -> float:
-        """ Return product of multiplier and num """
-        return num * multiplier
-    return multiply
+    '''returns a function that multiplies a float by a float'''
+    return lambda k: k * multiplier
+
+
+if __name__ == '__main__':
+    print(make_multiplier.__annotations__)
+    fun = make_multiplier(2.22)
+    print("{}".format(fun(2.22)))

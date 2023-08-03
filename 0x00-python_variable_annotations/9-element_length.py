@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-"""Let's duck type an iterable object """
 
-from typing import Iterable, List, Sequence, Tuple
+
+'''Annotating the below function’s parameters and return
+values with the appropriate types
+'''
+
+
+from typing import Sequence, Iterable, List, Tuple
 
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
-    """ Return list of tuples, each containing a sequence and its length """
+    '''Annotating the function parameters'''
     return [(i, len(i)) for i in lst]
+
+
+if __name__ == '__main__':
+    print(element_length.__annotations__)
